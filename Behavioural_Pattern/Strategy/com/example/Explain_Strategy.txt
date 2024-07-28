@@ -1,0 +1,26 @@
+Sorting System - Strategy Pattern
+
+A) Classes Used:
+
+1. SortStrategy: 
+An interface defining the strategy for sorting, providing a common method for all sorting algorithms.
+
+2. BubbleSort: 
+Implements the SortStrategy for bubble sort, providing a simple but less efficient sorting method.
+
+3. QuickSort: 
+Implements the SortStrategy for quick sort, offering a more efficient and complex sorting method.
+
+4. SortingContext: 
+Holds a reference to SortStrategy and uses it to execute the sorting strategy, allowing for dynamic strategy changes.
+
+5. Main: 
+Demonstrates the use of different sorting strategies in the system, showcasing the flexibility of the Strategy Pattern.
+
+B) Pattern Used & Its Need:
+
+Strategy Pattern: The Strategy Pattern is employed to encapsulate different sorting algorithms and make them interchangeable. This pattern allows the system to switch between various sorting strategies dynamically
+
+C) Overall Flow of the Project:
+
+The Sorting System uses the Strategy Pattern to manage different sorting algorithms, such as Bubble Sort and Quick Sort. The SortStrategy interface defines a unified method, sort(), which is implemented by the BubbleSort and QuickSort classes to perform their respective sorting algorithms. The SortingContext class holds a reference to a SortStrategy and executes the sorting strategy, allowing for dynamic selection and execution of different sorting algorithms. The Main class demonstrates the system's functionality by creating instances of the sorting context and setting different sorting strategies at runtime. This setup ensures that the system is flexible and can easily integrate new sorting algorithms, enhancing its extensibility and maintainability.

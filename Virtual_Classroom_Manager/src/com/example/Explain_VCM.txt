@@ -1,0 +1,60 @@
+Virtual Classroom Manager
+
+A) Classes Used:
+
+1. Student: 
+Represents a student with attributes such as name, department, registration number, and student ID.
+
+2. Classroom: 
+Represents a classroom containing assignments, students, and submissions.
+
+3. Assignment: 
+Represents an assignment with work details and the associated classroom name.
+
+4. Submission: 
+Represents a submission of an assignment by a student.
+
+5. Main: 
+Contains the main logic for managing classrooms, students, assignments, and submissions, including user interaction and logging.
+
+6. LoggerUtility: 
+Provides logging functionality, recording events and errors with timestamps to both the console and a log file.
+
+7. Admin: 
+(Assumed based on the mention of Singleton) Manages administrative tasks and maintains a single instance to ensure consistent control over administrative functions.
+
+B) Pattern Used & Its Need:
+
+1. Facade Pattern: 
+The system utilizes the Facade Pattern to simplify the interaction with various components like classrooms, students, assignments, and submissions. The Main class acts as a facade, offering a unified interface to users for managing and interacting with these components. This design hides the complexities of the underlying components, providing a straightforward and user-friendly experience.
+
+2. Singleton Pattern: 
+The Admin class employs the Singleton Pattern to ensure that only one instance of the admin exists throughout the application. This pattern is used to manage administrative tasks in a centralized manner, avoiding the overhead of creating multiple instances and ensuring consistency in administrative operations.
+
+C) Overall Flow of the Project:
+
+1. The Virtual Classroom Manager system integrates several components through a simplified interface, using the Facade Pattern to manage interactions. The Main class serves as the entry point, where users can create classrooms, enroll students, schedule assignments, and submit assignments. 
+
+2. It handles user input and delegates tasks to appropriate methods while logging actions and errors using the LoggerUtility class. The LoggerUtility class manages logging by outputting messages to both the console and a file, including timestamps for better traceability. 
+
+3. The Singleton Pattern is employed in the Admin class to ensure a single point of control for administrative functions. This approach ensures a clean separation of concerns and enhances the maintainability and usability of the system. The Facade Pattern simplifies complex functionalities, while the Singleton Pattern ensures consistency in administrative control.
+
+D) OOPS Concepts & SOLID Principles Employed:
+
+1. Encapsulation: 
+Used in classes like Student, Classroom, Assignment, and Submission, which encapsulate their attributes and behaviors, managing their own data and operations.
+
+2. Abstraction: 
+Implemented in the Main class which provides a simplified interface for users to interact with the underlying complexities of classroom management.
+
+3. Single Responsibility Principle: 
+Each class has a distinct responsibility. For example, Student manages student details, Classroom handles classroom data, and LoggerUtility manages logging.
+
+4. Open/Closed Principle: 
+The system is designed to allow for extensions (e.g., adding new features or functionalities) without altering existing code. For example, new methods for handling assignments or students can be added without changing the core logic.
+
+5. Liskov Substitution Principle: 
+Ensured by designing classes that can be substituted for one another without altering the correctness of the program. For example, Assignment objects can be used interchangeably within the Classroom class.
+
+6. Dependency Inversion Principle:
+Applied in the use of the LoggerUtility class, where higher-level modules (like Main) depend on abstractions (logging functionality) rather than concrete implementations. This promotes flexibility and easier maintenance.

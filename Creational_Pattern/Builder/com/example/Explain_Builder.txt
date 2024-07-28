@@ -1,0 +1,23 @@
+Computer Builder System - Builder Pattern
+
+A) Classes Used:
+
+1. Computer: 
+
+Represents the product with attributes such as CPU, RAM, Storage, etc. The class uses a constructor to enforce the use of the builder for object creation.
+
+2. ComputerBuilder: 
+
+A static nested class inside Computer used to construct Computer objects. It contains methods to set each attribute and a build() method to return an instance of Computer.
+
+3. Main: 
+
+Demonstrates the use of the builder pattern by creating different configurations of Computer objects.
+
+B) Pattern Used & Its Need:
+
+The Builder Pattern is utilized in the Computer Builder System to construct complex Computer objects step-by-step, ensuring that the creation process is both flexible and readable. This pattern is particularly useful for Computer objects with numerous optional parameters, as it allows for clear and manageable construction while maintaining immutability and separation of concerns.
+
+C) Overall Flow of the Project:
+
+The Computer class is designed to represent a computer system with multiple optional parts such as CPU, RAM, and Storage. The ComputerBuilder class, nested within Computer, provides methods to set these attributes. Users of the system create instances of Computer by using the builder to set the desired attributes and then calling the build() method. This ensures a flexible and readable way to create complex objects with optional parameters, adhering to the principles of immutability and separation of concerns. The Main class demonstrates the creation of different Computer configurations, showcasing the versatility and effectiveness of the builder pattern in managing the construction process.

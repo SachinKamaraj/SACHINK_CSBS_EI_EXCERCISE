@@ -1,0 +1,29 @@
+Stock Market Monitoring Application - Observer Pattern
+
+A) Classes Used:
+
+1. Stock: 
+Interface defining methods for registering, deregistering, and notifying observers.
+
+2. StockMarket: 
+Implements the Stock interface and maintains a list of observers to notify about stock price changes.
+
+3. Observer: 
+Interface defining the update method that observers implement to receive stock price updates.
+
+4. MobileApp: 
+Implements the Observer interface and represents a mobile application that receives stock price updates.
+
+5. WebApp: 
+Implements the Observer interface and represents a web application that receives stock price updates.
+
+6. Main: 
+Class to test the implementation of the observer pattern by registering, deregistering observers, and changing stock prices.
+
+B) Pattern Used & Its Need:
+
+Observer Pattern: This pattern is used to create a subscription mechanism to allow multiple objects (observers) to listen and react to events (stock price changes) emitted by another object (subject).
+
+C) Overall Flow of the Project:
+
+The stock market monitoring application begins with the user creating an instance of StockMarket, representing the stock data source. The user then creates instances of MobileApp and WebApp, which will act as observers. The Main class handles the registration of these observers with the StockMarket instance. When the user updates the stock price using the setStockPrice method, the StockMarket class notifies all registered observers by invoking their update methods. The observers, MobileApp and WebApp, process and display the updated stock prices. This design ensures that all observers receive real-time updates on stock price changes, and allows for easy addition of new observer types in the future without modifying the existing codebase.

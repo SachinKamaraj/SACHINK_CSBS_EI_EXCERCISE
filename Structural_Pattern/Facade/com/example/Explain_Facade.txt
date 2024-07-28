@@ -1,0 +1,29 @@
+Home Theater Management System - Facade Pattern
+
+A) Classes Used:
+
+1. HomeTheaterFacade: 
+Provides a simplified interface to control various subsystems of the home theater system.
+
+2. DVDPlayer: 
+Manages DVD playback functionalities, including turning on/off and playing/stopping DVDs.
+
+3. Projector: 
+Controls the projector settings, including turning on/off and switching to widescreen mode.
+
+4. SurroundSoundSystem: 
+Manages the surround sound system settings, including turning on/off and adjusting volume levels.
+
+5. Lights: 
+Controls the lighting settings in the home theater, including dimming and turning on the lights.
+
+6. Main: 
+Demonstrates the functionality of the home theater system using the facade to simplify user interactions.
+
+B) Pattern Used & Its Need:
+
+The Facade Pattern is utilized to provide a unified interface to a set of interfaces in a subsystem. It simplifies the control of a complex system by hiding the complexity of the subsystems and providing a single interface. This pattern is particularly useful in managing intricate systems like a home theater, where multiple subsystems need to work together seamlessly.
+
+C) Overall Flow of the Project:
+
+The Home Theater Management System uses the Facade Pattern to manage various subsystems such as the DVD Player, Projector, Surround Sound System, and Lights. The HomeTheaterFacade class provides a simplified interface with methods like watchMovie() and endMovie(), which internally manage the operations of the individual subsystems. For example, when the watchMovie() method is called, the facade powers on the DVD player, sets up the projector, configures the surround sound system, and dims the lights. Conversely, the endMovie() method reverses these actions to shut down the system. This design ensures that the user can control the entire home theater setup through a simple interface without needing to understand the complexities of each subsystem. The Main class demonstrates the system's functionality, showcasing how the Facade Pattern simplifies the user experience while managing the underlying complexity of the home theater system.

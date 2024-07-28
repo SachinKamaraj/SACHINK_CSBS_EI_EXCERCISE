@@ -1,0 +1,32 @@
+Payment Gateway System - Adapter Pattern
+
+A) Classes Used:
+
+1. PaymentProcessor: 
+An interface defining the processPayment() method, which ensures all payment gateways follow a common structure for processing payments.
+
+2. PayPalGateway: 
+A class representing the PayPal payment gateway with its own method for handling payments, sendPayment(). This class is adapted to fit the PaymentProcessor interface.
+
+3. StripeGateway: 
+A class representing the Stripe payment gateway with its own method for handling payments, makePayment(). This class is adapted to fit the PaymentProcessor interface.
+
+4. PayPalAdapter: 
+An adapter class that implements PaymentProcessor and adapts the PayPalGateway to fit the processPayment() method, allowing the system to process PayPal payments through a unified interface.
+
+5. StripeAdapter: 
+An adapter class that implements PaymentProcessor and adapts the StripeGateway to fit the processPayment() method, allowing the system to process Stripe payments through a unified interface.
+
+6. PaymentService: 
+A class that uses the PaymentProcessor interface to process payments. It allows the system to utilize different payment gateways through their respective adapters.
+
+7. Main: 
+The entry point of the application, demonstrating how different payment gateways can be processed using their respective adapters.
+
+B) Pattern Used & Its Need:
+
+Adapter Pattern: The Adapter Pattern is utilized to integrate multiple payment gateways (e.g., PayPal, Stripe) with different interfaces into a unified payment processing system. By creating adapter classes (e.g., PayPalAdapter, StripeAdapter) that conform to a common interface (PaymentProcessor), the system can seamlessly process payments through various gateways using a single, consistent method (processPayment()). This pattern enhances flexibility, enabling the system to easily incorporate new payment gateways without significant changes to the existing codebase, promoting scalability and maintainability.
+
+C) Overall Flow of the Project:
+
+The Payment Processing System leverages the Adapter Pattern to manage payments through different gateways, such as PayPal and Stripe. As a user, when you initiate a payment, the system uses the PaymentService to process your request. Depending on the selected payment method, the corresponding adapter (PayPalAdapter or StripeAdapter) is employed. These adapters translate the common processPayment() method into the specific method required by the chosen gateway (sendPayment() for PayPal and makePayment() for Stripe). This ensures that the payment is processed uniformly regardless of the gateway. This design makes it easy to add new payment gateways, ensuring a seamless and consistent payment experience.

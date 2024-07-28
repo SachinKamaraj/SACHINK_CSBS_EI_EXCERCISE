@@ -1,0 +1,39 @@
+Document Management System - Factory Pattern
+
+A) Classes Used:
+
+Documents
+
+1. Document: Abstract class defining the common structure and behaviors for all document types.
+
+2. WordDocument: Concrete class for creating and handling Word documents, extending Document.
+
+3. PdfDocument: Concrete class for creating and handling PDF documents, extending Document.
+
+4. ExcelDocument: Concrete class for creating and handling Excel documents, extending Document.
+
+Factory 
+
+1. DocumentFactory: Abstract factory class that declares the method for creating Document instances.
+
+2. WordDocumentFactory: Concrete factory class that implements DocumentFactory to create WordDocument instances.
+
+3. PdfDocumentFactory: Concrete factory class that implements DocumentFactory to create PdfDocument instances.
+
+4. ExcelDocumentFactory: Concrete factory class that implements DocumentFactory to create ExcelDocument instances.
+
+Main
+
+Main class demonstrating document creation using the factory methods based on user input.
+
+LoggingUtility
+
+Utility class for logging activities and events to track system operations.
+
+B) Pattern Used & Its Need:
+
+Factory Pattern: The Factory Pattern is used to encapsulate the creation of various document types, providing a flexible and scalable approach to instantiate documents without specifying their exact class, thereby promoting loose coupling and adherence to the Open/Closed Principle.
+
+C) Overall Flow of the Project:
+
+The Document Management System begins with the user selecting the type of document they wish to create (Word, PDF, or Excel). The Main class handles this user interaction, and based on the user’s choice, it delegates the document creation task to the appropriate factory class (WordDocumentFactory, PdfDocumentFactory, or ExcelDocumentFactory). Each factory class then instantiates the corresponding document class (WordDocument, PdfDocument, or ExcelDocument) and returns it. The created document is processed, and its type is logged using the LoggingUtility class. This design ensures that the system is easily extensible for adding new document types in the future by simply creating new document and factory classes, without modifying the existing codebase.
